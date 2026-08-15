@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "flaky-finder"
+version = "0.1.0"
+description = "Static AST analysis tool to diagnose flaky test root causes."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Your Name", email = "your.email@example.com" }]
+dependencies = [
+    "click>=8.0.0",
+    "rich>=12.0.0",
+]
+
+[project.scripts]
+flaky-finder = "flaky_finder.cli:main"
+
+[project.entry-points."pytest11"]
+flaky_finder = "flaky_finder.pytest_plugin"
