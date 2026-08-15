@@ -2,14 +2,20 @@
 
 Static AST analysis tool to diagnose flaky test root causes in Python test suites.
 
-## Features
-- Detects hardcoded `time.sleep()` calls (`FLK001`)
-- Detects unseeded `random` module calls (`FLK002`)
-- Detects global state mutations like `os.environ` (`FLK003`)
-- Native CLI and Pytest plugin support (`pytest --check-flaky`)
-- Suppression via `# flaky: ignore` comments
+## 🚀 Features
 
-## Quickstart
+- **FLK001**: Detects hardcoded `time.sleep()` calls
+- **FLK002**: Detects unseeded `random` module usage
+- **FLK003**: Detects global state mutations (`os.environ`)
+- **Pytest Plugin**: Native integration via `pytest --check-flaky`
+- **CI Enforcement**: Block builds with `pytest --check-flaky --flaky-fail`
+- **Inline Suppression**: Ignore rules using `# flaky: ignore`
+
+---
+
+## 📦 Installation
+
+Install directly from GitHub:
+
 ```bash
-pip install -e .
-flaky-finder tests/
+pip install git+[https://github.com/SamBeingSam/flaky-finder.git](https://github.com/SamBeingSam/flaky-finder.git)
